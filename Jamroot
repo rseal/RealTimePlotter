@@ -7,13 +7,13 @@ local fltk2_libs =  [ COMMAND "fltk2-config --ldflags" ] ;
 exe rtPlotter 
         : src/rtPlotter.cxx src/Plot.cxx 
         : <variant>release
-        : <cxxflags>"-std=gnu++0x -O2 -msse3 -march=athlon-xp -fomit-frame-pointer -pipe"
+        : <cxxflags>"-std=gnu++0x -O2 -msse3 -march=native -fomit-frame-pointer -pipe"
           <linkflags>"-lrt $(fltk2_libs)"
         ;
 exe dataGen
         : examples/dataGenerator.cxx
         : <variant>release
-        : <cxxflags>"-std=gnu++0x -O2 -msse3 -march=athlon-xp -fomit-frame-pointer -pipe"
+        : <cxxflags>"-std=gnu++0x -O2 -msse3 -march=native -fomit-frame-pointer -pipe"
           <linkflags>"-lrt -lpthread"
         ;
 
